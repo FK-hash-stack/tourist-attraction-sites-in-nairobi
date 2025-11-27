@@ -1,6 +1,5 @@
-// MAIN.JS — Nairobi Tourist Map
 
-const map = L.map('map').setView([-1.286389, 36.817223], 12);
+const map = L.map('map').setView([-1.2862, 36.8774], 12);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19
@@ -8,17 +7,20 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Category Icons
 const categoryIcons = {
-    "Park": L.icon({ iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png", iconSize: [32, 32] }),
-    "Museum": L.icon({ iconUrl: "https://cdn-icons-png.flaticon.com/512/2942/2942801.png", iconSize: [32, 32] }),
-    "Landmark": L.icon({ iconUrl: "https://cdn-icons-png.flaticon.com/512/854/854878.png", iconSize: [32, 32] })
+    "Wildlife & Nature": L.icon({ iconUrl: "https://cdn-icons-png.flaticon.com/512/616/616408.png", iconSize: [32, 32], className: 'marker-icon' }),
+    "History & Culture": L.icon({ iconUrl: "https://cdn-icons-png.flaticon.com/512/2942/2942801.png", iconSize: [32, 32], className: 'marker-icon' }),
+    "Shopping & Crafts": L.icon({ iconUrl: "https://cdn-icons-png.flaticon.com/512/2331/2331970.png", iconSize: [32, 32], className: 'marker-icon' }),
+    "Dining & Leisure": L.icon({ iconUrl: "https://cdn-icons-png.flaticon.com/512/1046/1046784.png", iconSize: [32, 32], className: 'marker-icon' }),
+    "Entertainment & Malls": L.icon({ iconUrl: "https://cdn-icons-png.flaticon.com/512/833/833314.png", iconSize: [32, 32], className: 'marker-icon' })
 };
 
+
 // Layer groups per category
-const layers = {
-    "Park": L.layerGroup().addTo(map),
-    "Museum": L.layerGroup().addTo(map),
-    "Landmark": L.layerGroup().addTo(map)
-};
+const layers = {};
+Object.keys(categoryIcons).forEach(cat => {
+    layers[cat] = L.layerGroup().addTo(map);
+});
+
 
 let allMarkers = []; // for searching
 
@@ -29,8 +31,11 @@ fetch('sites.json')
         data.forEach(site => {
             const popupHTML = `
                 <h3>${site.name}</h3>
-                <img src="${site.image}" style="width:200px;border-radius:6px;" />
-                <p>${site.description}</p>
+                <!-- <img src="${site.image}" style="width:200px;border-radius:6px;" /> -->
+				<p>${site.description}</p>
+				<p> <b>Fun Fact</b>: ${site.fun_facts}</p>
+				<p> <b>Fees</b>: ${site.fees} (Fees are approximate and subject to change)</p>
+                <p> <b>Open Hours</b>: ${site.open_hours}</p>
                 <a href="${site.link}" target="_blank">Visit Website</a>
             `;
 
@@ -88,3 +93,4 @@ function updateLegend() {
         `;
     });
 }
+
