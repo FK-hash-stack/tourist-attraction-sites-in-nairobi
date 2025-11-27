@@ -1,0 +1,101 @@
+[
+  {
+    "name": "Nairobi National Park",
+    "lat": -1.3733,
+    "lng": 36.858,
+    "category": "Park",
+    "image": "images/nairobi_park.jpg",
+    "description": "A wildlife reserve located just outside Nairobi's central business district.",
+    "link": "https://www.kws.go.ke/nairobi-national-park"
+  },
+  {
+    "name": "Giraffe Centre",
+    "lat": -1.3732,
+    "lng": 36.7517,
+    "category": "Park",
+    "image": "images/giraffe_centre.jpg",
+    "description": "A conservation and education center home to endangered Rothschild giraffes.",
+    "link": "https://giraffecentre.org/"
+  },
+  {
+    "name": "Karura Forest",
+    "lat": -1.2443,
+    "lng": 36.8251,
+    "category": "Park",
+    "image": "images/karura.jpg",
+    "description": "An urban forest with trails, waterfalls, caves, and picnic areas.",
+    "link": "https://friendsofkarura.org/"
+  },
+  {
+    "name": "Paradise Lost",
+    "lat": -1.1751,
+    "lng": 36.8226,
+    "category": "Park",
+    "image": "images/paradise_lost.jpg",
+    "description": "Natural attraction with caves, waterfalls, lakes, and picnic spots.",
+    "link": "https://paradiselost.co.ke/"
+  },
+  {
+    "name": "Nairobi National Museum",
+    "lat": -1.2683,
+    "lng": 36.8127,
+    "category": "Museum",
+    "image": "images/national_museum.jpg",
+    "description": "Kenya's flagship museum showcasing culture, nature, and history.",
+    "link": "http://museums.or.ke/nairobi-national-museum/"
+  },
+  {
+    "name": "Karen Blixen Museum",
+    "lat": -1.3554,
+    "lng": 36.7122,
+    "category": "Museum",
+    "image": "images/karen_blixen.jpg",
+    "description": "Historic farmhouse of the famous author of 'Out of Africa'.",
+    "link": "http://museums.or.ke/karen-blixen-museum/"
+  },
+  {
+    "name": "Railway Museum",
+    "lat": -1.2924,
+    "lng": 36.8273,
+    "category": "Museum",
+    "image": "images/railway_museum.jpg",
+    "description": "A museum showcasing Kenya's railway history, including vintage locomotives.",
+    "link": "http://museums.or.ke/railway-museum/"
+  },
+  {
+    "name": "Kenyatta International Conference Centre (KICC)",
+    "lat": -1.2894,
+    "lng": 36.8226,
+    "category": "Landmark",
+    "image": "images/kicc.jpg",
+    "description": "An iconic tower known for its rooftop views of Nairobi.",
+    "link": "http://kicc.co.ke/"
+  },
+  {
+    "name": "Bomas of Kenya",
+    "lat": -1.3267,
+    "lng": 36.7716,
+    "category": "Landmark",
+    "image": "images/bomas.jpg",
+    "description": "A cultural center showcasing Kenya's tribes through performances and exhibits.",
+    "link": "https://www.bomasofkenya.co.ke/"
+  },
+  {
+    "name": "Uhuru Gardens National Monument",
+    "lat": -1.322,
+    "lng": 36.7998,
+    "category": "Landmark",
+    "image": "images/uhuru_gardens.jpg",
+    "description": "Kenya's largest memorial park marking the country's independence.",
+    "link": "https://www.museums.or.ke/uhuru-gardens/"
+  },
+  {
+    "name": "August 7th Memorial Park",
+    "lat": -1.2845,
+    "lng": 36.8266,
+    "category": "Landmark",
+    "image": "images/august7.jpg",
+    "description": "A peace memorial dedicated to victims of the 1998 US Embassy bombing.",
+    "link": "https://august7thmemorial.org/"
+  }
+]
