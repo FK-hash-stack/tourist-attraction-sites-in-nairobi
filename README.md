@@ -1,2 +1,2 @@
-# tourist-attraction-sites-in-nairobi
-A static web map that shows tourist attraction site in Nairobi County, detailing their open hours, fees, and fun facts.
+# Tourist Attraction Sites In Nairobi County
+A static web map that shows tourist attraction sites in Nairobi County, detailing their open hours, fees, and other fun facts.
