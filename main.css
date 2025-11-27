@@ -1,96 +1,75 @@
-
-const map = L.map('map').setView([-1.2862, 36.8774], 12);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19
-}).addTo(map);
-
-// Category Icons
-const categoryIcons = {
-    "Wildlife & Nature": L.icon({ iconUrl: "https://cdn-icons-png.flaticon.com/512/616/616408.png", iconSize: [32, 32], className: 'marker-icon' }),
-    "History & Culture": L.icon({ iconUrl: "https://cdn-icons-png.flaticon.com/512/2942/2942801.png", iconSize: [32, 32], className: 'marker-icon' }),
-    "Shopping & Crafts": L.icon({ iconUrl: "https://cdn-icons-png.flaticon.com/512/2331/2331970.png", iconSize: [32, 32], className: 'marker-icon' }),
-    "Dining & Leisure": L.icon({ iconUrl: "https://cdn-icons-png.flaticon.com/512/1046/1046784.png", iconSize: [32, 32], className: 'marker-icon' }),
-    "Entertainment & Malls": L.icon({ iconUrl: "https://cdn-icons-png.flaticon.com/512/833/833314.png", iconSize: [32, 32], className: 'marker-icon' })
-};
-
-
-// Layer groups per category
-const layers = {};
-Object.keys(categoryIcons).forEach(cat => {
-    layers[cat] = L.layerGroup().addTo(map);
-});
-
-
-let allMarkers = []; // for searching
-
-// Load Site Data
-fetch('sites.json')
-    .then(res => res.json())
-    .then(data => {
-        data.forEach(site => {
-            const popupHTML = `
-                <h3>${site.name}</h3>
-                <!-- <img src="${site.image}" style="width:200px;border-radius:6px;" /> -->
-				<p>${site.description}</p>
-				<p> <b>Fun Fact</b>: ${site.fun_facts}</p>
-				<p> <b>Fees</b>: ${site.fees} (Fees are approximate and subject to change)</p>
-                <p> <b>Open Hours</b>: ${site.open_hours}</p>
-                <a href="${site.link}" target="_blank">Visit Website</a>
-            `;
-
-            const marker = L.marker([site.lat, site.lng], {
-                icon: categoryIcons[site.category]
-            }).bindPopup(popupHTML);
-
-            marker._category = site.category;
-            marker._name = site.name.toLowerCase();
-
-            layers[site.category].addLayer(marker);
-            allMarkers.push(marker);
-        });
-
-        updateLegend();
-    });
-
-// Search functionality
-const searchBox = document.getElementById("searchBox");
-searchBox.addEventListener("input", () => {
-    const query = searchBox.value.toLowerCase();
-
-    allMarkers.forEach(m => {
-        const inSearch = m._name.includes(query);
-        const inCategory = document.querySelector(`input[data-category="${m._category}"]`).checked;
-
-        if (inSearch && inCategory) layers[m._category].addLayer(m);
-        else layers[m._category].removeLayer(m);
-    });
-});
-
-// Category filter buttons
-const checkboxes = document.querySelectorAll('.filter-checkbox');
-checkboxes.forEach(cb => {
-    cb.addEventListener('change', () => {
-        const cat = cb.getAttribute('data-category');
-        const isChecked = cb.checked;
-
-        if (isChecked) map.addLayer(layers[cat]);
-        else map.removeLayer(layers[cat]);
-    });
-});
-
-// Dynamic Legend
-function updateLegend() {
-    const legend = document.getElementById('legend');
-    legend.innerHTML = '';
-
-    Object.keys(categoryIcons).forEach(cat => {
-        legend.innerHTML += `
-            <div class="legend-item">
-                <img class="legend-icon" src="${categoryIcons[cat].options.iconUrl}" />
-                ${cat}
-            </div>
-        `;
-    });
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
+#map {
+    height: 100vh;
+    width: 100%;
+}
+
+.top-bar {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    z-index: 999;
+    display: flex;
+    flex-direction: column; /* stack title on top */
+    gap: 10px;
+    align-items: center;
+}
+.map-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+.controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#searchBox {
+    padding: 6px 10px;
+    width: 220px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.filters label {
+    margin-right: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.marker-icon {
+    filter: drop-shadow(0 0 2px black);
+}
+
+.legend {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+    z-index: 999;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.legend-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
