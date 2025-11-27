@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nairobi Tourist Attractions</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="top-bar">
+        <input id="searchBox" type="text" placeholder="Search for a site..." />
+
+        <div class="filters">
+            <label><input type="checkbox" class="filter-checkbox" data-category="Park" checked> Parks</label>
+            <label><input type="checkbox" class="filter-checkbox" data-category="Museum" checked> Museums</label>
+            <label><input type="checkbox" class="filter-checkbox" data-category="Landmark" checked> Landmarks</label>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <div id="legend" class="legend"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
