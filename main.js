@@ -24,29 +24,38 @@ Object.keys(categoryIcons).forEach(cat => {
 
 let allMarkers = []; // for searching
 
-// Load Site Data
+const panel = document.getElementById('info-panel');
+const panelContent = document.getElementById('panel-content');
+const closePanel = document.getElementById('close-panel');
+
+closePanel.addEventListener('click', () => {
+    panel.style.display = 'none';
+});
+
 fetch('sites.json')
     .then(res => res.json())
     .then(data => {
         data.forEach(site => {
-            const popupHTML = `
-                <h3>${site.name}</h3>
-                <!-- <img src="${site.image}" style="width:200px;border-radius:6px;" /> -->
-				<p>${site.description}</p>
-				<p> <b>Fun Fact</b>: ${site.fun_facts}</p>
-				<p> <b>Fees</b>: ${site.fees} (Fees are approximate and subject to change)</p>
-                <p> <b>Open Hours</b>: ${site.open_hours}</p>
-                <a href="${site.link}" target="_blank">Visit Website</a>
-            `;
-
             const marker = L.marker([site.lat, site.lng], {
                 icon: categoryIcons[site.category]
-            }).bindPopup(popupHTML);
+            }).addTo(layers[site.category]);
 
             marker._category = site.category;
             marker._name = site.name.toLowerCase();
 
-            layers[site.category].addLayer(marker);
+            marker.on('click', () => {
+                panelContent.innerHTML = `
+                    <h2>${site.name}</h2>
+					<img src="${site.image}" alt="${site.name}" />
+                    <p>${site.description}</p>
+                    <p><b>Fun Fact</b>: ${site.fun_facts}</p>
+                    <p><b>Fees</b>: ${site.fees}</p>
+                    <p><b>Open Hours</b>: ${site.open_hours}</p>
+                    <a href="${site.link}" target="_blank">Visit Website</a>
+                `;
+                panel.style.display = 'block';
+            });
+
             allMarkers.push(marker);
         });
 
