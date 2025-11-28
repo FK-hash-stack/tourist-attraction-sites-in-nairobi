@@ -4,7 +4,7 @@
     "lat": -1.3733,
     "lng": 36.858,
     "category": "Wildlife & Nature",
-    "image": "images/nairobi_park.jpg",
+    "image": "images/nairobi_park.jpeg",
     "description": "A wildlife reserve located just outside Nairobi's central business district.",
     "open_hours": "06:00 - 19:00 daily",
     "fun_facts": "It is the only national park within a capital city in the world where you can see lions, giraffes, and rhinos.",
@@ -28,7 +28,7 @@
     "lat": -1.2443,
     "lng": 36.8251,
     "category": "Wildlife & Nature",
-    "image": "images/karura.jpg",
+    "image": "images/karura.JPG",
     "description": "An urban forest with trails, waterfalls, caves, and picnic areas.",
     "open_hours": "06:00 - 18:00 daily",
     "fun_facts": "The forest was declared a protected area in 1999 and is home to over 200 species of birds.",
@@ -88,7 +88,7 @@
     "lat": -1.3267,
     "lng": 36.7716,
     "category": "History & Culture",
-    "image": "images/bomas.jpg",
+    "image": "images/bomas.jpeg",
     "description": "A cultural center showcasing Kenya's tribes through performances and exhibits.",
     "open_hours": "Park: Weekdays 8:00 AM – 5:00 PM, Weekends/Holidays 8:30 AM – 6:00 PM. Cultural Shows: Weekdays 2:30 PM, Weekends/Holidays 3:30 PM.",
     "fun_facts": "The word 'Bomas' means **'homesteads'** in Swahili, and the site features authentic replica traditional villages from many of Kenya's diverse ethnic groups.",
@@ -172,7 +172,7 @@
     "lat": -1.2847,
     "lng": 36.825,
     "category": "History & Culture",
-    "image": "images/national_archives.jpg",
+    "image": "images/national_archives.jpeg",
     "description": "Houses the public records of the Kenyan government and a gallery of African art.",
     "open_hours": "Mon-Fri: 08:30 - 17:00, Sat: 08:30 - 13:00, Sun: Closed",
     "fun_facts": "The basement gallery features the Murumbi African Heritage Collection, one of the largest Pan-African art collections in the world.",
@@ -304,7 +304,7 @@
     "lat": -1.21,
     "lng": 36.79,
     "category": "History & Culture",
-    "image": "images/one_off_gallery.jpg",
+    "image": "images/one_off_gallery.jpeg",
     "description": "A tranquil gallery space known for exhibiting contemporary East African painting and sculpture.",
     "open_hours": "Tue-Sat: 10:00 - 17:00, Sun: 12:00 - 17:00, Mon: Closed",
     "fun_facts": "The gallery is set within a serene garden, making the visit a peaceful artistic escape.",
@@ -420,11 +420,11 @@
     "link": "http://kitengelaglass.com/"
   },
   {
-    "name": "Mali Ya Dada (Amani Ya Juu)",
+    "name": "Amani Ya Juu",
     "lat": -1.272,
     "lng": 36.794,
     "category": "Shopping & Crafts",
-    "image": "images/mali_ya_dada.jpg",
+    "image": "images/Amani.jpg",
     "description": "A social enterprise that trains and employs refugee and disadvantaged women to create beautiful fabric crafts.",
     "open_hours": "Mon-Fri: 08:30 - 16:30, Sat: 09:30 - 13:00, Sun: Closed",
     "fun_facts": "The name means 'Peace from Above'. The centre has a beautiful garden cafe where visitors can enjoy tea and snacks.",
@@ -528,30 +528,6 @@
     "link": "https://www.westgate.co.ke/"
   },
   {
-    "name": "Gede Ruins National Monument (Day Trip)",
-    "lat": -3.298,
-    "lng": 39.992,
-    "category": "History & Culture",
-    "image": "images/gede_ruins.jpg",
-    "description": "The mysterious ruins of a Swahili town dating back to the 12th century (Located near Malindi, 6-7 hours drive from Nairobi).",
-    "open_hours": "Daily: 07:00 - 18:00",
-    "fun_facts": "The town was abandoned in the 17th century for unknown reasons, remaining a fascinating archaeological site deep in the coastal forest.",
-    "fees": "Citizen Adult: KES 200, Non-Resident Adult: USD 10",
-    "link": "N/A"
-  },
-  {
-    "name": "Fort Jesus National Monument (Day Trip)",
-    "lat": -4.062,
-    "lng": 39.667,
-    "category": "History & Culture",
-    "image": "images/fort_jesus.jpg",
-    "description": "A massive 16th-century Portuguese fort in Mombasa (A long day trip or multi-day trip from Nairobi).",
-    "open_hours": "Daily: 08:00 - 18:00",
-    "fun_facts": "A UNESCO World Heritage Site, it was built by the Portuguese and is one of the most well-preserved examples of 16th-century Portuguese military architecture.",
-    "fees": "Citizen Adult: KES 200, Non-Resident Adult: USD 12",
-    "link": "N/A"
-  },
-  {
     "name": "Parliament Buildings",
     "lat": -1.289,
     "lng": 36.8205,
@@ -599,16 +575,5 @@
     "fees": "Free entry",
     "link": "N/A"
   },
-  {
-    "name": "Mogotio Equator Crossing (Day Trip)",
-    "lat": 0.0,
-    "lng": 35.8,
-    "category": "History & Culture",
-    "image": "images/equator_mogotio.jpg",
-    "description": "A site where the equator is marked, offering demonstrations of the Coriolis effect (near Nakuru, 3 hours from Nairobi).",
-    "open_hours": "24/7",
-    "fun_facts": "You can stand with one foot in the Northern Hemisphere and one in the Southern Hemisphere. Local guides often perform the water spin experiment to demonstrate the Coriolis effect.",
-    "fees": "Free (Tips for demonstration guides expected)",
-    "link": "N/A"
-  }
+  
 ]
