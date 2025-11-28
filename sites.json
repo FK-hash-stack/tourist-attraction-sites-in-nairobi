@@ -292,7 +292,7 @@
     "lat": -1.296,
     "lng": 36.818,
     "category": "History & Culture",
-    "image": "images/godown_arts.jpg",
+    "image": "images/godown_arts.jpeg",
     "description": "A hub for contemporary performance and visual arts, housed in a renovated warehouse.",
     "open_hours": "Mon-Fri: 09:00 - 17:00, Weekends: Event-dependent",
     "fun_facts": "The centre provides space for artists to rehearse, create, and showcase their work, hosting various festivals and workshops.",
@@ -304,7 +304,7 @@
     "lat": -1.21,
     "lng": 36.79,
     "category": "History & Culture",
-    "image": "images/one_off_gallery.jpeg",
+    "image": "images/one_off_gallery.jpg",
     "description": "A tranquil gallery space known for exhibiting contemporary East African painting and sculpture.",
     "open_hours": "Tue-Sat: 10:00 - 17:00, Sun: 12:00 - 17:00, Mon: Closed",
     "fun_facts": "The gallery is set within a serene garden, making the visit a peaceful artistic escape.",
@@ -574,6 +574,6 @@
     "fun_facts": "It provides a visual history and contemporary view of Kenya through the lens of local artists.",
     "fees": "Free entry",
     "link": "N/A"
-  },
+  }
   
 ]
